@@ -1,6 +1,6 @@
 # intermediatePHP
 Lanjutan dari Pembelajaran PHP Dasar
-Disini saya mempraktekkab fungsi php yang biasa diimplementasikan pada WEB
+Disini saya mencoba fungsi php yang biasa diimplementasikan pada WEB
 
 **INFORMASI**
 ---------------------
