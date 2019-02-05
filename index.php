@@ -1,17 +1,19 @@
 <?php
 include_once('header.php');
-
+session_start();
 $namaPengguna = "roni";
 $kataSandi = "ardiyanto";
 if (isset($_POST['submit'])) {
 
     if ($_POST['namaPengguna'] == $namaPengguna &&
-        $_POST['kataSandi'] === $kataSandi
+        $_POST['kataSandi'] == $kataSandi
         ) {
-        #cookie untuk menyimpan data sementara , tergantung pada waktu yang kita berikan(detik)
-            setcookie('namaPengguna', $_POST['namaPengguna'], time()+2000);
+        #cookie untuk menyimpan data sementara , tergantung pada waktu yang kita berikan(detik), saya disable agar session dapat berjalan
+            #setcookie('namaPengguna', $_POST['namaPengguna'], time()+2000);
         #untuk memindahkan user ke halaman jika berhasil login atau gagal
             header('Location: redirect.php?nama=' . $namaPengguna);
+        #session untuk menyimpan data sementara , tetapi mempunyai perlindungan dalam datanya
+            $_SESSION['pengguna'] = $_POST['namaPengguna'];
     } else {
         echo "login gagal";
     }
